@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 require('./config/db'); // connect MongoDB
-const peopleRoute = require('./routes/peopleRoute');
+const studentRoute = require('./routes/studentRoute');
 
 const app = express();
 const port = process.env.PORT || 7002;
@@ -10,7 +10,7 @@ const port = process.env.PORT || 7002;
 app.use(cors());
 app.use(express.json());
 
-app.use('/people', peopleRoute);
+app.use('/student', studentRoute);
 
 app.use('/uploads', express.static('uploads'));
 
