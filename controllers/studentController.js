@@ -30,7 +30,7 @@ async function createStudent(req, res) {
 // -------------------- GET All Active Students --------------------
 async function getAllStudents(req, res) {
   try {
-    const students = await Student.find({ isActive: true });
+const students = await Student.find(); // fetch all students, active + inactive
     res.status(200).send({ students, success: true });
   } catch (err) {
     console.error(err);
