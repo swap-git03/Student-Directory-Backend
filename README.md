@@ -1,2 +1,5 @@
-﻿# People-Directory-Backend : this project was assigned as peole directory with using mysql but further i changed it to student management system using MongoDB
+﻿# Student directory baclend with 2 seperste user panel 
+ 1] for teachers (admins)
+ 2] for students 
+
 
