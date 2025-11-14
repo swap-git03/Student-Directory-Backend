@@ -42,7 +42,7 @@ const students = await Student.find(); // fetch all students, active + inactive
 async function getStudentByID(req, res) {
   try {
     const id = req.params.id;
-    const student = await Student.findOne({ _id: id, isActive: true });
+    const student = await Student.findById(id); // removed isActive filter
     if (!student) return res.status(404).send({ msg: 'Student not found', success: false });
     res.status(200).send({ student, success: true });
   } catch (err) {
@@ -50,6 +50,7 @@ async function getStudentByID(req, res) {
     res.status(500).send({ msg: 'Database error', success: false });
   }
 }
+
 
 // -------------------- UPDATE Student Details --------------------
 async function updateStudent(req, res) {
